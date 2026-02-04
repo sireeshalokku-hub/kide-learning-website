@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kids Learning Games</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      margin: 0;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      font-size: 26px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      width: 220px;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 15px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0b7dda;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>?? Kids Learning Website ??</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>? Learn Math</h2>
+    <p>Addition game</p>
+    <button onclick="mathGame()">Play</button>
+  </div>
+
+  <div class="card">
+    <h2>?? Learn English</h2>
+    <p>Spelling game</p>
+    <button onclick="englishGame()">Play</button>
+  </div>
+
+  <div class="card">
+    <h2>?? Learn Science</h2>
+    <p>Simple quiz</p>
+    <button onclick="scienceGame()">Play</button>
+  </div>
+
+</div>
+
+<script>
+  function mathGame() {
+    let a = Math.floor(Math.random() * 10);
+    let b = Math.floor(Math.random() * 10);
+    let answer = prompt("What is " + a + " + " + b + "?");
+    if (answer == a + b) {
+      alert("?? Correct!");
+    } else {
+      alert("? Try again!");
+    }
+  }
+
+  function englishGame() {
+    let answer = prompt("Fill the blank: C _ T");
+    if (answer.toLowerCase() === "a") {
+      alert("?? Correct! CAT");
+    } else {
+      alert("? Try again!");
+    }
+  }
+
+  function scienceGame() {
+    let answer = prompt("Which planet do we live on?");
+    if (answer.toLowerCase() === "earth") {
+      alert("?? Correct!");
+    } else {
+      alert("? Try again!");
+    }
+  }
+</script>
+
+</body>
+</html>
+
+
+function playCorrectSound() {
+  let audio = new Audio('correct.mp3'); // add your sound file in project folder
+  audio.play();
+}
+
+
+<img src="math.png" alt="Math" width="150">
+
+button:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+
+button:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+
+let points = 0;
+
+function mathGame() {
+  let a = Math.floor(Math.random() * 10);
+  let b = Math.floor(Math.random() * 10);
+  let answer = prompt(`What is ${a} + ${b}?`);
+  if (answer == a + b) {
+    points++;
+    alert(`?? Correct! You have ${points} points`);
+  } else {
+    alert("? Try again!");
+  }
+}
+
+
+let password = prompt("Enter parent password:");
+if (password === "1234") {
+  alert("Access granted");
+} else {
+  alert("Access denied");
+}
+
+
+localStorage.setItem("mathPoints", points);
+let savedPoints = localStorage.getItem("mathPoints");
